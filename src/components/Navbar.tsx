@@ -1,11 +1,12 @@
-import { HStack, Image, Text } from '@chakra-ui/react'
+import { HStack, Image } from '@chakra-ui/react'
 import logo from '../assets/gamelogo.webp'
+import ThemeSwitch from './ThemeSwitch'
 
 const Navbar = () => {
   return (
-    <HStack>
+    <HStack justifyContent='space-between' padding='10px' >
         <Image src={logo} boxSize='60px'></Image>
-        <Text>Navbar</Text>
+        <ThemeSwitch />
     </HStack>
   )
 }
