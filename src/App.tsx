@@ -5,23 +5,29 @@ import GenreList from "./components/GenreList";
 
 function App() {
   return (
-    <Grid templateAreas={{
-      base: `"navbar" "main"`,
-      lg: `"navbar navbar" "sidebar main"`
-    }}>
-      <GridItem area='navbar'>
+    <Grid
+      templateAreas={{
+        base: `"navbar" "main"`,
+        lg: `"navbar navbar" "sidebar main"`,
+      }}
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
+      }}
+    >
+      <GridItem area="navbar">
         <Navbar />
       </GridItem>
       <Show above="lg">
-      <GridItem area='sidebar'>
-        <GenreList />
-      </GridItem>
+        <GridItem area="sidebar" paddingX="10px">
+          <GenreList />
+        </GridItem>
       </Show>
-      <GridItem area='main'>
+      <GridItem area="main">
         <GameGrid />
       </GridItem>
     </Grid>
-  )
+  );
 }
 
-export default App
+export default App;
