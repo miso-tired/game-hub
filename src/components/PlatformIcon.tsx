@@ -6,7 +6,7 @@ import {
     FaApple,
     FaAndroid
   } from "react-icons/fa6";
-import { BsNintendoSwitch, BsGlobe } from "react-icons/bs";
+import { BsNintendoSwitch, BsGlobe2 } from "react-icons/bs";
 import { Platform } from "../hooks/UseGame"
 import { HStack, Icon } from "@chakra-ui/react"
 import { IconType } from "react-icons";
@@ -24,7 +24,7 @@ const PlatformIcon = ({ platforms }: Props) => {
         mac: FaApple,
         nintendo: BsNintendoSwitch,
         android: FaAndroid,
-        web: BsGlobe
+        web: BsGlobe2
     }
 
   return (

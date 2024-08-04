@@ -2,11 +2,12 @@ import { HStack, Image, List, ListItem, Spinner, Button } from "@chakra-ui/react
 import useGenre, { Genre } from "../hooks/UseGenre";
 import OptimizedImage from "../hooks/image_url";
 
-interface Props {
+export interface Props {
   onSelectedGenre: (genre: Genre) => void;
+  highlightedGenre: Genre | null
 }
 
-const GenreList = ({ onSelectedGenre }: Props) => {
+const GenreList = ({ onSelectedGenre, highlightedGenre }: Props) => {
   const { data, loading, error } = useGenre();
 
   if (error) return null;
@@ -24,7 +25,7 @@ const GenreList = ({ onSelectedGenre }: Props) => {
               boxSize="40px"
               src={OptimizedImage(genre.image_background)}
             />
-            <Button variant='link' onClick={() => onSelectedGenre(genre)}>{genre.name}</Button>
+            <Button fontWeight={genre.id === highlightedGenre?.id ? 'bold' : 'normal'} variant='link' onClick={() => onSelectedGenre(genre)}>{genre.name}</Button>
           </HStack>
         </ListItem>
       ))}
